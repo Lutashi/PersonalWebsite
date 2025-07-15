@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './App.css';
 import './index.css';
 
@@ -43,7 +43,7 @@ function randomizeText(target: string, progress = 0): string {
 function GlitchName() {
   const [display, setDisplay] = useState("");
   const [isCiphering, setIsCiphering] = useState(true);
-  const decipherTimeout = useRef<ReturnType<typeof setTimeout>>();
+  const decipherTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Initial decipher animation (slower)
   useEffect(() => {
