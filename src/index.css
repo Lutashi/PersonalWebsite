@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -36,7 +39,7 @@
     @apply relative text-white font-mono text-7xl font-extrabold select-none;
     animation: glitch-anim 3s ease-in-out infinite;
     font-family: 'Fira Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
-    text-shadow: 0 2px 16px rgba(0,255,255,0.12), 0 1px 2px #fff, 0 0 8px #00f, 0 0 2px #f0f;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.12), 0 1px 2px #000, 0 0 8px #000, 0 0 2px #000;
     letter-spacing: 0.01em;
   }
   .glitch-text:hover {
@@ -49,13 +52,13 @@
   }
   .glitch-text::before {
     left: 2px;
-    text-shadow: -2px 0 red, 0 0 8px #f00;
+    text-shadow: -2px 0 #000, 0 0 8px #000;
     clip-path: inset(0 0 45% 0);
     animation: glitch-top 1.5s infinite linear alternate-reverse;
   }
   .glitch-text::after {
     left: -2px;
-    text-shadow: -2px 0 blue, 0 0 8px #00f;
+    text-shadow: -2px 0 #000, 0 0 8px #000;
     clip-path: inset(55% 0 0 0);
     animation: glitch-bottom 1.8s infinite linear alternate-reverse;
   }
@@ -72,6 +75,26 @@
     @apply text-white scale-125;
     filter: drop-shadow(0 0 12px #fff) drop-shadow(0 0 8px #0ff);
     animation: icon-flicker 0.7s ease-in-out;
+  }
+  .neon-orange {
+    color: #ff9100;
+    border-radius: 9999px;
+    padding: 0.1em 0.5em;
+    font-weight: bold;
+    background: transparent;
+    text-shadow: 0 0 8px #ff9100, 0 0 16px #ff9100, 0 0 32px #ff9100;
+    animation: neon-glow 1.5s ease-in-out infinite alternate;
+    box-shadow: none;
+  }
+  .neon-blue {
+    color: #00b3ff;
+    border-radius: 9999px;
+    padding: 0.1em 0.5em;
+    font-weight: bold;
+    background: transparent;
+    text-shadow: 0 0 8px #00b3ff, 0 0 16px #00b3ff, 0 0 32px #00b3ff;
+    animation: neon-glow-blue 1.5s ease-in-out infinite alternate;
+    box-shadow: none;
   }
 }
 
@@ -108,4 +131,22 @@
 @keyframes icon-flicker {
   0%,20%,40%,60%,100% { opacity: 1; }
   10%,30%,50%,70%,90% { opacity: 0.4; }
+}
+
+@keyframes neon-glow {
+  0% {
+    text-shadow: 0 0 6px #ff9100, 0 0 12px #ff9100, 0 0 24px #ff9100;
+  }
+  100% {
+    text-shadow: 0 0 16px #ff9100, 0 0 32px #ff9100, 0 0 48px #ff9100;
+  }
+}
+
+@keyframes neon-glow-blue {
+  0% {
+    text-shadow: 0 0 8px #00b3ff, 0 0 16px #00b3ff, 0 0 32px #00b3ff;
+  }
+  100% {
+    text-shadow: 0 0 16px #00b3ff, 0 0 32px #00b3ff, 0 0 48px #00b3ff;
+  }
 }
