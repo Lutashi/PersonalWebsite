@@ -20,10 +20,14 @@ const socials = [
 const projects = [
   {
     name: 'Personal Website',
-    description: 'This very site, built with React, Vite, and Tailwind CSS.',
+    description: 'This very site.',
     link: '#',
   },
-
+  {
+    name: 'HackMatch',
+    description: 'Tinder for developers.',
+    link: 'https://hack-match-neon.vercel.app/',
+  },
 ];
 
 const NAME = "Aikhan Jumashukurov";
@@ -70,7 +74,7 @@ function GlitchName() {
 
   return (
     <h1
-      className={`glitch-text${isCiphering ? ' is-ciphering' : ''}`}
+      className={`glitch-text${isCiphering ? ' is-ciphering' : ''} text-center w-full max-w-screen-md mx-auto break-words`}
       data-text={isCiphering ? display : NAME}
       style={{ cursor: isCiphering ? 'default' : 'pointer' }}
     >
@@ -83,28 +87,29 @@ function App() {
   return (
     <div className="w-screen min-h-screen bg-black overflow-x-hidden">
       {/* Glassmorphic Navbar */}
-      <nav className="fixed top-0 left-0 w-full z-50 flex justify-center backdrop-blur-md bg-white/10 border-b border-white/10 py-3 px-6">
-        <div className="flex gap-8 text-lg font-mono text-white/80">
+      <nav className="fixed top-0 left-0 w-full z-50 flex justify-center backdrop-blur-md bg-white/10 border-b border-white/10 py-3 px-2 sm:px-6">
+        <div className="flex items-center gap-4 sm:gap-8 text-base sm:text-lg font-mono text-white/80">
           <a href="#about" className="hover:text-white transition-colors duration-200">About</a>
           <a href="#projects" className="hover:text-white transition-colors duration-200">My Projects</a>
         </div>
       </nav>
 
       {/* About Section */}
-      <section id="about" className="w-full h-screen flex items-center justify-center pt-20">
+      <section id="about" className="w-full h-[90vh] min-h-[600px] flex items-center justify-center pt-24 sm:pt-20 px-2 sm:px-0">
         <div className="container flex flex-col items-center justify-center fade-in">
           <GlitchName />
-          <p className="tagline">Building cool things. Exploring the digital world.</p>
-          <div className="about-me mt-6 max-w-xl text-center text-gray-300 text-lg font-mono">
+          <p className="tagline text-lg sm:text-2xl">Building cool things.</p>
+          <div className="about-me mt-4 sm:mt-6 max-w-xs sm:max-w-xl text-center text-gray-300 text-base sm:text-lg font-mono">
             <p>
               Studying <span className="neon-blue">Computer Science</span> @ <span className="neon-orange">Princeton</span><br/>
               <br/>
-              Learning, building, breaking stuff, repeating.<br/>
               
-              I make small things that (hopefully) help people.<br/>
-            </p>
+              {/* Learning, building, breaking stuff, repeating.<br/>
+              
+              I make small things that (hopefully) help people.<br/> */}
+              </p>
           </div>
-          <div className="links flex flex-row items-center justify-center mt-6">
+          <div className="links flex flex-row items-center justify-center mt-4 sm:mt-6 gap-2 sm:gap-4">
             {socials.map((s) => (
               <a
                 key={s.name}
@@ -122,15 +127,15 @@ function App() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="w-full min-h-[60vh] flex flex-col items-center justify-center py-24 fade-in">
-        <h2 className="text-4xl font-bold text-white mb-8 font-mono">My Projects</h2>
-        <div className="grid grid-cols-1 justify-center w-full max-w-3xl px-4">
+      <section id="projects" className="w-full min-h-[60vh] flex flex-col items-center justify-center py-16 sm:py-24 fade-in px-2 sm:px-0">
+        <h2 className="text-2xl sm:text-4xl font-bold text-white mb-6 sm:mb-8 font-mono">My Projects</h2>
+        <div className="grid grid-cols-1 justify-center w-full max-w-xs sm:max-w-3xl px-0 sm:px-4">
           {projects.map((project) => (
-            <div key={project.name} className="bg-white/10 backdrop-blur rounded-xl p-6 border border-white/10 shadow-lg hover:scale-[1.03] transition-transform duration-200 mx-auto mb-8 last:mb-0 font-mono">
-              <h3 className="text-2xl font-semibold text-white mb-2 font-mono">{project.name}</h3>
-              <p className="text-gray-300 mb-2 font-mono">{project.description}</p>
+            <div key={project.name} className="bg-white/10 backdrop-blur rounded-xl p-4 sm:p-6 border border-white/10 shadow-lg hover:scale-[1.03] transition-transform duration-200 mx-auto mb-6 sm:mb-8 last:mb-0 font-mono w-full max-w-xs sm:w-96">
+              <h3 className="text-lg sm:text-2xl font-semibold text-white mb-1 sm:mb-2 font-mono">{project.name}</h3>
+              <p className="text-gray-300 mb-1 sm:mb-2 font-mono text-sm sm:text-base">{project.description}</p>
               {project.link && (
-                <a href={project.link} className="text-cyan-300 hover:underline text-sm font-mono" target="_blank" rel="noopener noreferrer">View Project</a>
+                <a href={project.link} className="text-cyan-300 hover:underline text-xs sm:text-sm font-mono" target="_blank" rel="noopener noreferrer">View Project</a>
               )}
             </div>
           ))}
@@ -138,8 +143,8 @@ function App() {
       </section>
 
       {/* Email at the very bottom */}
-      <footer className="w-full flex justify-center items-center py-8 mt-8 select-text">
-        <a href="mailto:ajumashukurov@gmail.com" className="flex items-center gap-2 text-gray-200 hover:text-white text-lg font-mono">
+      <footer className="w-full flex justify-center items-center py-6 sm:py-8 mt-4 sm:mt-8 select-text px-2 sm:px-0">
+        <a href="mailto:ajumashukurov@gmail.com" className="flex items-center gap-2 text-gray-200 hover:text-white text-base sm:text-lg font-mono">
           <svg fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5A2.25 2.25 0 012.25 17.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15A2.25 2.25 0 002.25 6.75m19.5 0v.243a2.25 2.25 0 01-.876 1.8l-7.125 5.7a2.25 2.25 0 01-2.748 0l-7.125-5.7a2.25 2.25 0 01-.876-1.8V6.75" /></svg>
           ajumashukurov@gmail.com
         </a>
