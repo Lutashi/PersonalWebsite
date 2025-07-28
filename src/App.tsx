@@ -51,7 +51,7 @@ export default function PersonalWebsite() {
       tech: ["Next.js", "Firebase", "Tailwind CSS", "WebRTC"],
       github: "#",
       demo: "https://devmolink.com",
-      image: "src/assets/devmoLinkOfficialIcon.png",
+      image: "/devmoLinkOfficialIcon.png",
     },
     
   ]
@@ -386,7 +386,7 @@ export default function PersonalWebsite() {
             <div className="relative">
               
               <img
-                src="src/assets/aikhan.png"
+                src="/aikhanpfpBLACKANDWHITE.png"
                 alt="Aikhan Jumashukurov"
                 className="relative rounded-2xl shadow-2xl w-full max-w-md mx-auto"
               />
