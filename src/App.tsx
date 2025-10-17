@@ -301,6 +301,19 @@ export default function PersonalWebsite() {
            -webkit-box-orient: vertical;
            overflow: hidden;
          }
+
+        /* Hide all scrollbars across browsers */
+        html, body, #root { height: 100%; }
+        /* Keep scrolling functional but hide the bars */
+        * { 
+          -ms-overflow-style: none; /* IE and Edge */
+          scrollbar-width: none;    /* Firefox */
+        }
+        *::-webkit-scrollbar { 
+          width: 0; 
+          height: 0; 
+          background: transparent;  /* Chrome/Safari/Opera */
+        }
        `}</style>
 
       {/* Navigation */}
@@ -325,8 +338,8 @@ export default function PersonalWebsite() {
       </nav> */}
 
       {/* Hero Section */}
-      <section id="home" className="pt-16 min-h-screen flex items-center relative overflow-hidden">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center relative z-10 py-10">
+      <section id="home" className="min-h-screen w-full flex items-center justify-center relative overflow-hidden">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center relative z-10 py-10">
           <div
             className={`transform transition-all duration-1000 ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"}`}
           >
@@ -365,8 +378,8 @@ export default function PersonalWebsite() {
             <div className="relative">
               
               <img
-                src="/aikhanpfpBLACKANDWHITE.png"
-                alt="Aikhan Jumashukurov"
+                src="/kidkhan2.png"
+                alt="I've always been THAT guy"
                 className="relative rounded-2xl shadow-2xl w-full max-w-md mx-auto"
               />
             </div>
