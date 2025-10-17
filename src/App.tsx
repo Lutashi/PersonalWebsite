@@ -32,12 +32,12 @@ export default function PersonalWebsite() {
     return () => clearInterval(intervalId)
   }, [])
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-    }
-  }
+  // const scrollToSection = (sectionId: string) => {
+  //   const element = document.getElementById(sectionId)
+  //   if (element) {
+  //     element.scrollIntoView({ behavior: "smooth" })
+  //   }
+  // }
 
   const nextNews = () => {
     setCurrentNewsIndex((prev) => (prev + 1) % newsArticles.length)
